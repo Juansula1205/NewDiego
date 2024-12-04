@@ -8,6 +8,7 @@ import ButtonBar from "../../components/ButtonBar";
 import { Link } from "react-router-dom";
 import { getCharacters } from "../../api/functions";
 import { CharacterType } from "../character-detail";
+import SearchBar from "../../components/SearchBar";
 
 const Home = () => {
   const [paginaActual, setPaginaActual] = useState<number>(1);
@@ -21,6 +22,7 @@ const Home = () => {
   console.log(personajes);
   return (
     <div className="flex flex-col justify-center gap-4 w-full mx-auto">
+      <SearchBar />
       <ButtonBar currentPage={paginaActual} setCurrentPage={setPaginaActual} />
       <div className="flex flex-col justify-center sm:flex-row gap-4 sm:flex-wrap sm:w-10/12 mx-auto">
         {personajes?.map((x) => (
